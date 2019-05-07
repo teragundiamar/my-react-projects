@@ -1,12 +1,45 @@
+// import React and ReactDom libraries
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ReactDom from 'react-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// create a react component
+const App = () => {
+    return (
+        <div className="ui comments">
+        <h3 className="ui dividing header">Comments</h3>
+    <div className="comment">
+        <a className="avatar">
+        <img src="/images/avatar/small/joe.jpg" />
+        </a>
+        <div className="content">
+        <a className="author">Joe Henderson</a>
+        <div className="metadata">
+            <span className="date">5 days ago</span>
+        </div>
+        <div className="text">
+            Dude, this is awesome. Thanks so much
+        </div>
+        {/* <div className="actions">
+            <a className="reply">Reply</a>
+        </div> */}
+        </div>
+    </div>
+    {/* <form className="ui reply form">
+        <div className="field">
+        <textarea defaultValue={""} />
+        </div>
+        <div className="ui blue labeled submit icon button">
+        <i className="icon edit" /> Add Reply
+        </div>
+    </form> */}
+</div>
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+    )
+}
+
+
+// take the react component and show it on the screen
+ReactDom.render(
+    <App />,
+    document.querySelector('#root')
+);
